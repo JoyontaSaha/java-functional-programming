@@ -20,22 +20,21 @@ public class Main {
 
 
         System.out.println(" ::: Imperative Approach :::");
-        System.out.println(" :: Females :: \n");
+        System.out.println(" :: Females :: ");
         for (Person female: females) {
             System.out.println(female);
         }
 
-        // Declarative approach :: What to do
-        List<Person> femaleList = people.stream()
-                .filter(person -> person.getGender().equals(Gender.FEMALE))
-                .collect(Collectors.toList());
-
         System.out.println("\n\n\n");
 
         System.out.println(" ::: Declarative Approach :::");
-        System.out.println(" :: Females :: \n");
+        System.out.println(" :: Females :: ");
 
-        femaleList.forEach(System.out::println);
+        // Declarative approach :: What to do
+        people.stream()
+                .filter(person -> person.getGender().equals(Gender.FEMALE))
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
     }
 
     private static List<Person> getPeople() {
