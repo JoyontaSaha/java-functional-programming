@@ -13,6 +13,19 @@ public class _Function {
 
         System.out.println("Declarative Approach");
         System.out.println("declarativeIncrement :: " + declarativeIncrement);
+
+        int declarativeMultiply = multiplyByTenFunction.apply(2);
+
+        System.out.println("Declarative Approach");
+        System.out.println("declarativeMultiply :: " + declarativeMultiply);
+
+
+        System.out.println("Declarative Approach.....Function Chaining");
+        System.out.println("addByOneThenMultiplyByTen :: " + addByOneThenMultiplyByTenFunction.apply(2));
+
+
+
+
     }
 
     // imperative approach
@@ -22,4 +35,11 @@ public class _Function {
 
     // declarative approach
     static Function<Integer, Integer> incrementByOneFunction = number -> number + 1;
+
+    // declarative approach
+    static Function<Integer, Integer> multiplyByTenFunction = number -> number * 10;
+
+    // declarative approach ....Function Chaining
+    static Function<Integer, Integer> addByOneThenMultiplyByTenFunction = incrementByOneFunction.andThen(multiplyByTenFunction);
+
 }
