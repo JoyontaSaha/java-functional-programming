@@ -1,4 +1,4 @@
-package imperative;
+package imperative_vs_declarative;
 
 import java.util.Arrays;
 import java.util.LinkedList;
