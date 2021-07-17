@@ -1,5 +1,6 @@
 package functionalinterface;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class _Function {
@@ -21,8 +22,13 @@ public class _Function {
 
 
         System.out.println("Declarative Approach.....Function Chaining");
-        System.out.println("addByOneThenMultiplyByTen :: " + addByOneThenMultiplyByTenFunction.apply(2));
+        System.out.println("addByOneThenMultiplyByTenFunction :: " + addByOneThenMultiplyByTenFunction.apply(2));
 
+        System.out.println("Imperative Approach");
+        System.out.println("addByOneThenMultiply :: " + addByOneThenMultiply(4, 20));
+
+        System.out.println("Declarative Approach");
+        System.out.println("addByOneThenMultiplyBiFUnction :: " + addByOneThenMultiplyBiFUnction.apply(4, 20));
 
 
 
@@ -45,4 +51,12 @@ public class _Function {
     // Function interface takes 1 argument and produces 1 result
     static Function<Integer, Integer> addByOneThenMultiplyByTenFunction = incrementByOneFunction.andThen(multiplyByTenFunction);
 
+    // imperative approach
+    static int addByOneThenMultiply (int number, int multiplyBy) {
+        return (number + 1) * multiplyBy;
+    }
+
+    // declarative approach
+    // BiFunction interface takes 2 argument and produces 1 result
+    static BiFunction<Integer, Integer, Integer> addByOneThenMultiplyBiFUnction = (number, multiplyBy) -> (number + 1) * multiplyBy;
 }
