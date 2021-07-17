@@ -1,5 +1,7 @@
 package functionalinterface;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class _Supplier {
@@ -9,6 +11,9 @@ public class _Supplier {
 
         System.out.println("Declarative Approach");
         System.out.println(getDBConnectionURLSupplier.get());
+
+        System.out.println("Declarative Approach");
+        System.out.println(getDBConnectionURLListSupplier.get());
     }
 
     // Imperative Approach
@@ -19,4 +24,10 @@ public class _Supplier {
     // Declarative Approach
     // no argument 1 result as output
     public static Supplier<String> getDBConnectionURLSupplier = () -> "jdbc://localhost:8080/user";
+
+    // Declarative Approach
+    // no argument 1 result as output
+    public static Supplier<List<String>> getDBConnectionURLListSupplier = () ->
+            Arrays.asList("jdbc://localhost:8080/user", "jdbc://localhost:8081/admin");
+
 }
