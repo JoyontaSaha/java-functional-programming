@@ -34,12 +34,15 @@ public class _Function {
     }
 
     // declarative approach
+    // Function interface takes 1 argument and produces 1 result
     static Function<Integer, Integer> incrementByOneFunction = number -> number + 1;
 
     // declarative approach
+    // Function interface takes 1 argument and produces 1 result
     static Function<Integer, Integer> multiplyByTenFunction = number -> number * 10;
 
     // declarative approach ....Function Chaining
+    // Function interface takes 1 argument and produces 1 result
     static Function<Integer, Integer> addByOneThenMultiplyByTenFunction = incrementByOneFunction.andThen(multiplyByTenFunction);
 
 }
